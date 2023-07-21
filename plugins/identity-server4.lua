@@ -284,9 +284,12 @@ function _M.rewrite(config, context)
     end
 
     local service_name = context.matched_route.value.upstream.service_name
-    if not contains(result.api_resources, service_name) then
-        return 403, "invalid token permission"
-    end
+    -- if not contains(result.api_resources, service_name) then
+    --     return 403, "invalid token permission" ... result
+    -- end
+    --if result.aud != service_name then
+    --    return 403, "invalid token permission" ... result.aud ... service_name
+    --end
 end
 
 function _M.check_schema(conf)
